@@ -23,7 +23,6 @@ describe("FAQ", () => {
       .should("be.visible")
       .contains("Patient Users"); // Verify the expected text after login
 
-    //click on profile icon to redirect to profile page
     cy.get(":nth-child(10) > .text-gray-primary").should("have.text", "FAQs");
     cy.get(":nth-child(10) > .text-gray-primary").click();
   });
@@ -145,11 +144,11 @@ describe("FAQ", () => {
     cy.get(".gap-6 > .flex-col").click();
     cy.get(".gap-6 > .flex-col").should("have.text", "Question ");
     cy.get(".text-black").clear("T");
-    cy.get(".text-black").type("Test FAQ 4");
+    cy.get(".text-black").type("Test FAQ 5");
     cy.get(".min-h-\\[calc\\(100vh-64px\\)\\] > .sm\\:px-6").click();
     cy.get(".md\\:text-xl").should("have.text", "Add Answer");
     cy.get(".ql-editor").click();
-    cy.get(".ql-editor").type("Test Answer 4");
+    cy.get(".ql-editor").type("Test Answer 5");
 
     cy.get(".justify-center").should("have.text", "Add");
     cy.get(".justify-center > .flex").click();
@@ -168,11 +167,11 @@ describe("FAQ", () => {
     cy.get(".gap-6 > .flex-col").click();
     cy.get(".gap-6 > .flex-col").should("have.text", "Question ");
     cy.get(".text-black").clear("T");
-    cy.get(".text-black").type("Test FAQ 4");
+    cy.get(".text-black").type("Test FAQ 5");
     cy.get(".min-h-\\[calc\\(100vh-64px\\)\\] > .sm\\:px-6").click();
     cy.get(".md\\:text-xl").should("have.text", "Add Answer");
     cy.get(".ql-editor").click();
-    cy.get(".ql-editor").type("Test Answer 4");
+    cy.get(".ql-editor").type("Test Answer 5");
 
     cy.get(".justify-center").should("have.text", "Add");
     cy.get(".justify-center > .flex").click();
@@ -183,19 +182,19 @@ describe("FAQ", () => {
   });
 
   it("Update FAQ ", () => {
-    cy.contains("button", "Test FAQ 4")
+    cy.contains("button", "Test FAQ 5")
       .should("be.visible")
       .get("#headlessui-disclosure-button-\\:r2\\: > .ml-6 > .mt-1")
       .click();
 
     cy.get(".w-1\\/3 > .text-gray-dark").should("have.text", "Edit FAQ");
 
-    cy.get('input[type="text"][value="Test FAQ 4"]')
+    cy.get('input[type="text"][value="Test FAQ 5"]')
       .clear()
-      .type("Updated FAQ 4 Title");
+      .type("Updated FAQ 5 Title");
 
     cy.get(".ql-editor").click().clear();
-    cy.get(".ql-editor").type("Updated FAQ 4 Answer");
+    cy.get(".ql-editor").type("Updated FAQ 5 Answer");
     cy.contains("button", "Update").click();
 
     cy.get(".Toastify__toast-body > :nth-child(2)").should(
@@ -204,8 +203,8 @@ describe("FAQ", () => {
     );
   });
 
-  it.only("Delete FAQ ", () => {
-    cy.contains("button", "Updated FAQ 4 Title")
+  it("Delete FAQ ", () => {
+    cy.contains("button", "Updated FAQ 5 Title")
       .should("be.visible")
       .get("#headlessui-disclosure-button-\\:r2\\: > .ml-6 > .mt-1")
       .click();
