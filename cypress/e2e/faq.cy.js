@@ -219,7 +219,7 @@ describe("FAQ", () => {
     cy.contains("button", "Updated FAQ 4 Title").should("not.exist");
   });
 
-  ////////////
+  ///
   ///Can AI provide the same level of ethical decision-making as human therapists?
   ///Ethical decision-making in therapy involves considerations that go beyond data and algorithms. It includes understanding moral principles, cultural contexts, and the unique circumstances of each client. Human therapists can navigate these complex ethical landscapes and make decisions that are in the best interest of their clients. AI, on the other hand, operates within the limitations of its programming and cannot independently make such complex ethical decisions.
 });
